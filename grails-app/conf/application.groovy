@@ -37,3 +37,22 @@ grails.plugin.springsecurity.onAuthenticationSuccessEvent = { e, appCtx ->
 		user.save(flush: true)
 	}
 }
+
+
+grails {
+	mail {
+		host = "smtp.gmail.com"
+		port = 465
+		username = "YOURMAIL@GMAIL.com"
+		password = "YOURPASSWORD"
+		props = ["mail.smtp.auth":"true",
+				 "mail.smtp.socketFactory.port":"465",
+				 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+				 "mail.smtp.socketFactory.fallback":"false"]
+	}
+}
+
+grails.plugin.springsecurity.failureHandler.exceptionMappings = [
+		[exception: org.springframework.security.authentication.DisabledException.name,           url: '/user/accountDisabled'],
+		[exception: org.springframework.security.authentication.CredentialsExpiredException.name, url: '/user/passwordExpired']
+]

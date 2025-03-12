@@ -5,7 +5,7 @@ info:
     grailsVersion: '@info.app.grailsVersion@'
 grails:
   mongodb:
-    url: mongodb+srv://roplisp-user:oxJQq3W5R6CcVajQ@lab01.mmpcc.mongodb.net/roplisp?retryWrites=true&w=majority&appName=LAB01
+    url: mongodb+srv://<USER>:<PASSWORD>@<MONGODBURL>/<DATABASE>?retryWrites=true&w=majority&appName=LAB01
   mime:
     disable:
       accept:

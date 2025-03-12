@@ -9,5 +9,8 @@
 *
 *= require main
 *= require mobile
+*= require owl.carousel
+*= require style
+*= require animate
 *= require_self
 */

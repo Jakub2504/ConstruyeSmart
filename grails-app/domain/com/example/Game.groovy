@@ -10,13 +10,14 @@ class Game {
 
     Choice userChoice
     Choice appChoice
-    Boolean getIsWinner() {
+    GameResult getIsWinner() {
         if(userChoice == null || appChoice == null) return null
-        if(userChoice == Choice.PAPER) return appChoice in [Choice.ROCK, Choice.SPOCK]
-        else if(userChoice == Choice.ROCK) return appChoice in [Choice.SCISSORS, Choice.LIZARD]
-        else if(userChoice == Choice.SCISSORS) return appChoice in [Choice.PAPER, Choice.LIZARD]
-        else if(userChoice == Choice.LIZARD) return appChoice in [Choice.PAPER, Choice.SPOCK]
-        else return appChoice in [Choice.ROCK, Choice.SCISSORS]
+        if(userChoice == appChoice) return GameResult.DRAW
+        else if(userChoice == Choice.PAPER) return appChoice in [Choice.ROCK, Choice.SPOCK] ? GameResult.WIN : GameResult.LOSE
+        else if(userChoice == Choice.ROCK) return appChoice in [Choice.SCISSORS, Choice.LIZARD] ? GameResult.WIN : GameResult.LOSE
+        else if(userChoice == Choice.SCISSORS) return appChoice in [Choice.PAPER, Choice.LIZARD] ? GameResult.WIN : GameResult.LOSE
+        else if(userChoice == Choice.LIZARD) return appChoice in [Choice.PAPER, Choice.SPOCK] ? GameResult.WIN : GameResult.LOSE
+        else return appChoice in [Choice.ROCK, Choice.SCISSORS] ? GameResult.WIN : GameResult.LOSE
     }
 
     static transients = ['isWinner']
@@ -37,5 +38,15 @@ enum Choice {
 
     private final Integer id
     private Choice(Integer id) { this.id = id }
+    Integer id() { id }
+}
+
+enum GameResult {
+    LOSE(0),
+    WIN(1),
+    DRAW(2)
+
+    private final Integer id
+    private GameResult(Integer id) { this.id = id }
     Integer id() { id }
 }

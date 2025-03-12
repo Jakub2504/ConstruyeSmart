@@ -56,7 +56,8 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-autoconfigure"
     implementation "org.springframework.boot:spring-boot-starter"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
-    implementation "org.springframework.boot:spring-boot-starter-jetty"
+    //implementation "org.springframework.boot:spring-boot-starter-jetty"
+    developmentOnly "org.springframework.boot:spring-boot-starter-jetty"
     implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-starter-validation"
     compileOnly "io.micronaut:micronaut-inject-groovy"
@@ -82,6 +83,7 @@ dependencies {
     implementation 'org.grails.plugins:spring-security-core:6.1.2'
     implementation 'org.grails.plugins:mail:4.0.0'
     implementation 'grails.bootstrap.forms:grails-bootstrap-forms:0.3.3'
+    testImplementation "org.springframework.boot:spring-boot-starter-tomcat"
 }
 
 application {

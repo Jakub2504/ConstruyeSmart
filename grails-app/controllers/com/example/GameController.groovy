@@ -55,7 +55,7 @@ class GameController {
             return
         }
 
-        redirect controller: "game", action: "index"
+        redirect action: "show", id: game?.id?.toString()
         return
     }
 

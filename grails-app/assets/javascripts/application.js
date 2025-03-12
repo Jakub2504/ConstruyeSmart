@@ -6,6 +6,9 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery-3.5.1.min
+//= require owl.carousel
 //= require popper.min
 //= require bootstrap
+//= require jquery.marquee
+//= require layout
 //= require_self
