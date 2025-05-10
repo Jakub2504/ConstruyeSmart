@@ -1,0 +1,61 @@
+.rental-location {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.rental-location:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.map-info-window {
+    padding: 0.5rem;
+}
+
+.map-info-window h6 {
+    margin-bottom: 0.5rem;
+    color: #0d6efd;
+}
+
+.map-info-window p {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+}
+
+.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.btn {
+    margin-right: 0.5rem;
+}
+
+.alert {
+    margin-bottom: 1rem;
+} 

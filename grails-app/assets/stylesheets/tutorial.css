@@ -1,0 +1,185 @@
+.tutorial-card {
+    transition: all 0.3s ease;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.tutorial-card .rating {
+    color: #ffc107;
+}
+
+.tutorial-card .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+}
+
+.tutorial-steps {
+    counter-reset: step;
+}
+
+.tutorial-step {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tutorial-step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.tutorial-materials {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tutorial-materials ul {
+    margin-bottom: 0;
+}
+
+.tutorial-tools {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tutorial-tools ul {
+    margin-bottom: 0;
+}
+
+.related-videos {
+    margin-top: 2rem;
+}
+
+.related-video-card {
+    transition: all 0.3s ease;
+}
+
+.related-video-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.related-video-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.rating-stars {
+    font-size: 1.5rem;
+    color: #ffc107;
+    cursor: pointer;
+}
+
+.rating-stars .fa-star-o {
+    color: #dee2e6;
+}
+
+.rating-stars .fa-star-o:hover,
+.rating-stars .fa-star-o:hover ~ .fa-star-o {
+    color: #ffc107;
+}
+
+.tutorial-meta {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.tutorial-meta i {
+    margin-right: 0.5rem;
+}
+
+.tutorial-tags {
+    margin-top: 1rem;
+}
+
+.tutorial-tags .badge {
+    margin-right: 0.5rem;
+}
+
+.search-form {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-form .form-control,
+.search-form .form-select {
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.search-form .form-control:focus,
+.search-form .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.search-form .input-group {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-form .input-group .form-control {
+    border-right: none;
+}
+
+.search-form .input-group .btn {
+    border-left: none;
+    background-color: #fff;
+}
+
+.search-form .form-select[multiple] {
+    height: auto;
+    min-height: 100px;
+}
+
+.search-form .form-select[multiple] option {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.search-form .form-select[multiple] option:last-child {
+    border-bottom: none;
+}
+
+.search-form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.5rem 1.5rem;
+}
+
+.search-form .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    padding: 0.5rem 1.5rem;
+}
+
+.search-form .btn i {
+    margin-right: 0.5rem;
+} 

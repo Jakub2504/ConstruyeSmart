@@ -1,296 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>ROPLISP</title>
+    <title>ConstruyeSmart - Tu Asistente Profesional de Construcción</title>
+    <asset:stylesheet src="home.css"/>
 </head>
 <body>
-
-<g:if test="${flash.message}">
-    <div class="text-center alert alert-success" role="alert">${flash.message}</div>
-</g:if>
-
-<!-- Hero section -->
-<section class="hero-section">
-    <div class="hero-slider owl-carousel">
-        <div class="hs-item set-bg" data-setbg="${request.contextPath}/assets/slider-rock.jpg">
-            <div class="hs-text">
-                <div class="container">
-                    <h2 class="strokeme">The <span>ROCK</span> Will Crush You</h2>
-                    <p class="strokeme">I am the unyielding force, the foundation of the earth itself.<br />Crushing scissors, smashing lizards—no strategy can withstand my might.<br />I am the eternal champion, solid and unbreakable.</p>
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 text-white">ConstruyeSmart</h1>
+                <p class="lead text-white">Tu asistente profesional para proyectos de construcción y albañilería</p>
+                <div class="mt-4">
+                    <g:if test="${!user}">
+                        <!-- Mostrar opciones de inicio de sesión y registro para usuarios no autenticados -->
+                        <g:link controller="login" action="auth" class="btn btn-primary btn-lg me-3">Iniciar Sesión</g:link>
+                        <g:link controller="login" action="register" class="btn btn-outline-light btn-lg">Registrarse</g:link>
+                    </g:if>
+                    <g:if test="${user}">
+                        <!-- Mostrar botón para crear proyectos para usuarios autenticados -->
+                        <g:link controller="project" action="create" class="btn btn-success btn-lg">Nuevo Proyecto</g:link>
+                    </g:if>
                 </div>
             </div>
-        </div>
-        <div class="hs-item set-bg" data-setbg="${request.contextPath}/assets/slider-paper.jpg">
-            <div class="hs-text">
-                <div class="container">
-                    <h2 class="strokeme">The <span>PAPER</span> Will Engulf You</h2>
-                    <p class="strokeme">Elegance and intellect are my weapons.<br />I wrap around rock, disprove Spock, and outwit the cleverest minds.<br />I am the silent conqueror, the proof that brains always triumph over brawn.</p>
-                </div>
-            </div>
-        </div>
-        <div class="hs-item set-bg" data-setbg="${request.contextPath}/assets/slider-scissors.jpg">
-            <div class="hs-text">
-                <div class="container">
-                    <h2 class="strokeme">The <span>SCISSORS</span> Will Cut You Into Pieces</h2>
-                    <p class="strokeme">Precision and speed define me.<br />I cut through paper, decapitate lizards, and leave my opponents in pieces.<br />I am the blade of victory, sharp, swift, and unstoppable.</p>
-                </div>
-            </div>
-        </div>
-        <div class="hs-item set-bg" data-setbg="${request.contextPath}/assets/slider-lizard.jpg">
-            <div class="hs-text">
-                <div class="container">
-                    <h2 class="strokeme">The <span>LIZARD</span> Will Eat You</h2>
-                    <p class="strokeme">Cunning and adaptability are my strengths.<br />I poison Spock, devour paper, and outmaneuver the strongest foes.<br />I am the wildcard, the unpredictable force that always finds a way to win.</p>
-                </div>
-            </div>
-        </div>
-        <div class="hs-item set-bg" data-setbg="${request.contextPath}/assets/slider-spock.jpg">
-            <div class="hs-text">
-                <div class="container">
-                    <h2 class="strokeme"><span>SPOCK</span> Will Vaporize You</h2>
-                    <p class="strokeme">Logic and superiority guide my path.<br />I vaporize rock, dismantle scissors, and outthink every opponent.<br />I am the master of the mind, the embodiment of reason and victory.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero section end -->
-
-
-<!-- Latest news section -->
-<div class="latest-news-section">
-    <div class="ln-title">Latest Games</div>
-    <div class="news-ticker">
-        <div class="news-ticker-contant">
-            <div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-            <div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-            <div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
         </div>
     </div>
 </div>
-<!-- Latest news section end -->
 
+<!-- Herramientas Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Herramientas Profesionales</h2>
+    <div class="row">
+        <g:each in="${tools}" var="tool">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="${tool.icon} fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">${tool.name}</h5>
+                        <p class="card-text">${tool.description}</p>
+                        <g:link uri="${tool.link}" class="btn btn-outline-primary">Acceder</g:link>
+                    </div>
+                </div>
+            </div>
+        </g:each>
+    </div>
+</div>
 
-<!-- Feature section -->
-<section class="feature-section spad">
+<!-- Consejos Profesionales -->
+<div class="bg-light py-5">
     <div class="container">
+        <h2 class="text-center mb-4">Consejos Profesionales</h2>
         <div class="row">
-            <div class="col-lg-3 col-md-6 p-0">
-                <div class="feature-item set-bg" data-setbg="img/features/1.jpg">
-                    <span class="cata new">new</span>
-                    <div class="fi-content text-white">
-                        <h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        <a href="#" class="fi-comment">3 Comments</a>
+            <g:each in="${constructionTips}" var="tip">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="${tip.icon} fa-2x mb-3 text-primary"></i>
+                            <h5 class="card-title">${tip.title}</h5>
+                            <p class="card-text">${tip.content}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-0">
-                <div class="feature-item set-bg" data-setbg="img/features/2.jpg">
-                    <span class="cata strategy">strategy</span>
-                    <div class="fi-content text-white">
-                        <h5><a href="#">Justo tempor, rutrum erat id, molestie</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        <a href="#" class="fi-comment">3 Comments</a>
+            </g:each>
+        </div>
+    </div>
+</div>
+
+<!-- Proyectos Destacados (solo para usuarios autenticados) -->
+<div class="container my-5">
+    <g:if test="${user}">
+        <h2 class="text-center mb-4">Proyectos Destacados</h2>
+        <div class="row">
+            <g:each in="${featuredProjects}" var="project">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">${project.name}</h5>
+                            <p class="card-text">${project.description}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-${project.status == 'active' ? 'success' : 'secondary'}">${project.status}</span>
+                                <g:link controller="project" action="show" id="${project.id}" class="btn btn-sm btn-outline-primary">Ver Detalles</g:link>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-0">
-                <div class="feature-item set-bg" data-setbg="img/features/3.jpg">
-                    <span class="cata new">new</span>
-                    <div class="fi-content text-white">
-                        <h5><a href="#">Nullam lacinia ex eleifend orci porttitor</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        <a href="#" class="fi-comment">3 Comments</a>
-                    </div>
+            </g:each>
+        </div>
+    </g:if>
+</div>
+
+<!-- Estadísticas (solo para usuarios autenticados) -->
+<g:if test="${user}">
+    <div class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <h3 class="display-4">${stats.projectCount}</h3>
+                    <p>Proyectos Totales</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-0">
-                <div class="feature-item set-bg" data-setbg="img/features/4.jpg">
-                    <span class="cata racing">racing</span>
-                    <div class="fi-content text-white">
-                        <h5><a href="#">Lacinia ex eleifend orci suscipit</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        <a href="#" class="fi-comment">3 Comments</a>
-                    </div>
+                <div class="col-md-3">
+                    <h3 class="display-4">${stats.activeProjects}</h3>
+                    <p>Proyectos Activos</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="display-4">${stats.completedProjects}</h3>
+                    <p>Proyectos Completados</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="display-4">${stats.totalBudget}</h3>
+                    <p>Presupuesto Total</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- Feature section end -->
+</g:if>
 
-
-<!-- Recent game section  -->
-<section class="recent-game-section spad set-bg" data-setbg="img/recent-game-bg.png">
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
     <div class="container">
-        <div class="section-title">
-            <div class="cata new">new</div>
-            <h2>Recent Games</h2>
-        </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="recent-game-item">
-                    <div class="rgi-thumb set-bg" data-setbg="img/recent-game/1.jpg">
-                        <div class="cata new">new</div>
-                    </div>
-                    <div class="rgi-content">
-                        <h5>Suspendisse ut justo tem por, rutrum</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-                        <a href="#" class="comment">3 Comments</a>
-                        <div class="rgi-extra">
-                            <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-                            <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <h5>ConstruyeSmart</h5>
+                <p>Tu asistente profesional para proyectos de construcción</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="recent-game-item">
-                    <div class="rgi-thumb set-bg" data-setbg="img/recent-game/2.jpg">
-                        <div class="cata racing">racing</div>
-                    </div>
-                    <div class="rgi-content">
-                        <h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-                        <a href="#" class="comment">3 Comments</a>
-                        <div class="rgi-extra">
-                            <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-                            <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <h5>Enlaces Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><g:link controller="project" action="index" class="text-white">Proyectos</g:link></li>
+                </ul>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="recent-game-item">
-                    <div class="rgi-thumb set-bg" data-setbg="img/recent-game/3.jpg">
-                        <div class="cata adventure">Adventure</div>
-                    </div>
-                    <div class="rgi-content">
-                        <h5>Suspendisse ut justo tem por, rutrum</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-                        <a href="#" class="comment">3 Comments</a>
-                        <div class="rgi-extra">
-                            <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-                            <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <h5>Contacto</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-envelope"></i> info@construyesmart.com</li>
+                    <li><i class="fas fa-phone"></i> +34 900 123 456</li>
+                </ul>
             </div>
         </div>
     </div>
-</section>
-<!-- Recent game section end -->
-
-
-<!-- Tournaments section -->
-<section class="tournaments-section spad">
-    <div class="container">
-        <div class="tournament-title">Tournaments</div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="tournament-item mb-4 mb-lg-0">
-                    <div class="ti-notic">Premium Tournament</div>
-                    <div class="ti-content">
-                        <div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
-                        <div class="ti-text">
-                            <h4>World Of WarCraft</h4>
-                            <ul>
-                                <li><span>Tournament Beggins:</span> June 20, 2018</li>
-                                <li><span>Tounament Ends:</span> July 01, 2018</li>
-                                <li><span>Participants:</span> 10 teams</li>
-                                <li><span>Tournament Author:</span> Admin</li>
-                            </ul>
-                            <p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="tournament-item">
-                    <div class="ti-notic">Premium Tournament</div>
-                    <div class="ti-content">
-                        <div class="ti-thumb set-bg" data-setbg="img/tournament/2.jpg"></div>
-                        <div class="ti-text">
-                            <h4>DOOM</h4>
-                            <ul>
-                                <li><span>Tournament Beggins:</span> June 20, 2018</li>
-                                <li><span>Tounament Ends:</span> July 01, 2018</li>
-                                <li><span>Participants:</span> 10 teams</li>
-                                <li><span>Tournament Author:</span> Admin</li>
-                            </ul>
-                            <p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Tournaments section bg -->
-
-
-<!-- Review section -->
-<section class="review-section spad set-bg" data-setbg="img/review-bg.png">
-    <div class="container">
-        <div class="section-title">
-            <div class="cata new">new</div>
-            <h2>Recent Reviews</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="review-item">
-                    <div class="review-cover set-bg" data-setbg="img/review/1.jpg">
-                        <div class="score yellow">9.3</div>
-                    </div>
-                    <div class="review-text">
-                        <h5>Assasin’’s Creed</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="review-item">
-                    <div class="review-cover set-bg" data-setbg="img/review/2.jpg">
-                        <div class="score purple">9.5</div>
-                    </div>
-                    <div class="review-text">
-                        <h5>Doom</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="review-item">
-                    <div class="review-cover set-bg" data-setbg="img/review/3.jpg">
-                        <div class="score green">9.1</div>
-                    </div>
-                    <div class="review-text">
-                        <h5>Overwatch</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="review-item">
-                    <div class="review-cover set-bg" data-setbg="img/review/4.jpg">
-                        <div class="score pink">9.7</div>
-                    </div>
-                    <div class="review-text">
-                        <h5>GTA</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Review section end -->
-
-<p>Games played: ${gc}</p>
-<g:link controller="game" action="create" class="text-center btn btn-primary">
-    PLAY
-</g:link>
+</footer>
 </body>
 </html>
