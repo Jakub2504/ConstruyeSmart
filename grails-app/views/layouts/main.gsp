@@ -20,6 +20,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item" >
+                        <a class="nav-link" href="${createLink(controller: 'mapa', action: 'tiendas')}">Mapa de tiendas</a>
+                    </li>
                     <g:if test="${!request.authenticated}">
                         <li class="nav-item">
                             <g:link class="nav-link" controller="login" action="auth">Iniciar Sesión</g:link>

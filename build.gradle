@@ -97,8 +97,8 @@ dependencies {
 }
 
 assets {
-    minifyJs = true
-    minifyCss = true
+    minifyJs = false
+    minifyCss = false
 }
 
 bootRun {

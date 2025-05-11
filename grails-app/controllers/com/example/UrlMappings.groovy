@@ -16,6 +16,7 @@ class UrlMappings {
         "/home/index"(controller: 'home', action: 'index')
         "/calculator"(controller: 'calculator', action: 'index')
         "/calculator/**"(controller: 'calculator')
+        "/mapa/tiendas"(controller: "mapa", action: "tiendas")
         "500"(view:'/error')
         "404"(view:'/notFound')
 
