@@ -22,13 +22,11 @@
     <h2 class="text-primary text-end">Mapa de Tiendas</h2>
 
     <div id="map" style="height: 600px; width: 100%; border-radius: 8px;"></div>
-
 </div>
 
 <script type="text/javascript">
     window.tiendas = JSON.parse("${tiendasJson.encodeAsJavaScript()}");
 </script>
-
 
 
 <asset:javascript src="tiendas.js"/>
